@@ -74,6 +74,22 @@ def get_population(country_name):
 
 def get_continents():
     """Return the list of continents"""
+    global country_pop
+    continent_list=[]
+    country_pop_split=country_pop.split("\n")
+    for cntr in country_pop_split:
+        split_cntr=cntr.split("\t")  
+        if split_cntr[0]=="Rank":
+            continue 
+        else:
+            if not continent_list.__contains__(split_cntr[2]):
+                continent_list.append(split_cntr[2])
+    
+    continent_list.sort()
+    return continent_list
+
+
+
 
 
 def get_continent_populations():
