@@ -95,4 +95,18 @@ def get_continents():
 def get_continent_populations():
     """Returns a dict where the key is the name of the continent and
        the value is the total population of all countries on that continent"""
-
+    cont_pop=dict()
+    global country_pop
+    continent_list=[]
+    country_pop_split=country_pop.split("\n")
+    for cntr in country_pop_split:
+        split_cntr=cntr.split("\t")  
+        if split_cntr[0]=="Rank":
+            continue 
+        else:
+            if not split_cntr[2] in list(cont_pop.keys()):
+                cont_pop.update({split_cntr[2]:conv_num_with_commas(split_cntr[5])})
+            else:
+                new_pop=cont_pop[split_cntr[2]]+conv_num_with_commas(split_cntr[5])
+                cont_pop.update({split_cntr[2]:new_pop})  
+    return cont_pop
