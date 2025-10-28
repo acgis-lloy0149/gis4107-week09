@@ -31,6 +31,13 @@ def conv_num_with_commas(number_text):
 
 def get_top_five_countries():
     """Return a list of names of the top five countries in terms of population"""
+    country_list=[]
+    global country_pop
+    country_pop_split=country_pop.split("\n")
+    for cntr in country_pop_split:
+        split_cntr=cntr.split("\t")
+        country_list.append(split_cntr[1])
+    return country_list[1:6]
 
 
 def set_country_to_pop():
@@ -40,6 +47,16 @@ def set_country_to_pop():
                Pop 01Jul2017 column
             2. The % decrease as a number
     """
+    global country_pop
+    global country_to_pop
+    country_pop_split=country_pop.split("\n")
+    for cntr in country_pop_split:
+        split_cntr=cntr.split("\t")  
+        if split_cntr[0]=="Rank":
+            continue     
+        country_to_pop.update({split_cntr[1]:(int(conv_num_with_commas(split_cntr[5])),float(split_cntr[6][1:len(split_cntr[6])-1]))})
+        
+
 
 
 def get_population(country_name):
