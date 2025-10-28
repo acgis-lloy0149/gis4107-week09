@@ -56,3 +56,12 @@ def flatten_list(in_list):
     For example, if in_list = [1, (2,3), [4,5]], 
     the returned list would be [1, 2, 3, 4, 5]
     """
+    newlist=[]
+    for num in in_list:
+     if isinstance(num, tuple) or isinstance(num, list):
+        for ara in num:
+            newlist.append(ara)
+     else:
+        newlist.append(num)
+    return newlist
+    

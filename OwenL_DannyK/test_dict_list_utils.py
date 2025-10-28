@@ -36,7 +36,7 @@ def test_get_unique():
 
 
 def test_flatten_list():
-    in_list = ''
-    expected = ''
+    in_list = [1,(2,3), [4,5]]
+    expected = [1, 2, 3, 4, 5]
     actual = dlu.flatten_list(in_list)
     assert expected == actual
