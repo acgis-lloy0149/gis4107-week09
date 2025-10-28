@@ -66,6 +66,10 @@ def get_population(country_name):
        from country_to_pop.  If the country_to_pop is
        empty (i.e. no keys or values), then run set_country_to_pop
        to initialize it."""
+    global country_to_pop
+    if country_to_pop=={}:
+        set_country_to_pop()
+    return country_to_pop[country_name][0]
 
 
 def get_continents():
