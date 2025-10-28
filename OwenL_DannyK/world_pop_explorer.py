@@ -32,6 +32,8 @@ def conv_num_with_commas(number_text):
 def get_top_five_countries():
     """Return a list of names of the top five countries in terms of population"""
 
+    return country_pop.split('\t')
+
 
 def set_country_to_pop():
     """Sets the global country_to_pop dictionary where key is country name
