@@ -23,8 +23,10 @@ def get_country_count():
     
 
 def conv_num_with_commas(number_text):
-    """Convert a number with commas (str) to a number.
-       e.g. '1,000' would be converted to 1000"""
+    number_text=number_text.replace(",","")
+    return float(number_text)
+        
+
 
 
 def get_top_five_countries():
