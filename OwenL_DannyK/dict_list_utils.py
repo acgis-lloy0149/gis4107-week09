@@ -16,6 +16,11 @@ def get_missing_keys(dict_ref, dict_to_compare):
        Example:  dict_ref = {1:1, 2:2, 3:3}, dict_to_compare = {2:2}
                  returns [1, 3]
     """
+    not_in=[]
+    for keys in list(dict_ref.keys()):
+     if not keys in dict_to_compare:
+        not_in.append(keys)
+    return not_in
 
 
 def get_missing_keys_with_count(dict_ref, dict_to_compare):
@@ -25,7 +30,14 @@ def get_missing_keys_with_count(dict_ref, dict_to_compare):
        Example:  dict_ref = {1:1, 2:2, 3:3}, dict_to_compare = {2:2}
                  returns (2, [1, 3])
     """
-
+    not_in=[]
+    count_and_keys=[]
+    for keys in list(dict_ref.keys()):
+     if not keys in dict_to_compare:
+        not_in.append(keys)
+    count_and_keys.append(len(not_in))
+    count_and_keys.append(not_in)
+    return count_and_keys
 
 def get_unique(in_list):
     """Retuns a list of unique values from in_list

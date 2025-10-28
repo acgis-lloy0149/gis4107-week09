@@ -13,9 +13,9 @@ import dict_list_utils as dlu
 
 
 def test_get_missing_keys():
-    dict_ref = ''
-    dict_to_compare = ''
-    expected = ''
+    dict_ref = {1:1, 2:2, 3:3}
+    dict_to_compare = {2:2}
+    expected = [1, 3]
     actual = dlu.get_missing_keys(dict_ref, dict_to_compare)
     assert expected == actual
 
