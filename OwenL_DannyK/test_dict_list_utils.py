@@ -29,8 +29,8 @@ def test_get_missing_keys_with_count():
 
 
 def test_get_unique():
-    in_list = ''
-    expected = ''
+    in_list = [1,2,2,3]
+    expected = [1,2,3]
     actual = dlu.get_unique(in_list)
     assert expected == actual
 

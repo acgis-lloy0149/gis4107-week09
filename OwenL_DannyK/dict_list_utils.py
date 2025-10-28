@@ -40,6 +40,11 @@ def get_unique(in_list):
     """Retuns a list of unique values from in_list
     Example:  in_list = [1, 2, 2, 3] returns [1, 2, 3]
     """
+    new_list=[]
+    for num in in_list:
+       if not num in new_list:
+          new_list.append(num)
+    return new_list
 
 
 def flatten_list(in_list):
