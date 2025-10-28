@@ -21,9 +21,9 @@ def test_get_missing_keys():
 
 
 def test_get_missing_keys_with_count():
-    dict_ref = ''
-    dict_to_compare = ''
-    expected = ''
+    dict_ref = {1:1, 2:2, 3:3}
+    dict_to_compare = {2:2}
+    expected = (2, [1, 3])
     actual = dlu.get_missing_keys_with_count(dict_ref, dict_to_compare)
     assert expected == actual
 
