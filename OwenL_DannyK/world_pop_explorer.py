@@ -39,6 +39,8 @@ def get_top_five_countries():
         country_list.append(split_cntr[1])
     return country_list[1:6]
 
+    return country_pop.split('\t')
+
 
 def set_country_to_pop():
     """Sets the global country_to_pop dictionary where key is country name
